@@ -6,16 +6,48 @@ pragma solidity ^0.8.28;
 
 
 import "./model.sol";
+import "./tournament_mutation.sol";
 
 
 
 
 contract TournamentSystem {
+    using TournamentMutation for mapping(string => TournamentAccount);
+
     mapping(string => UserProfile) private profileStore;
     mapping(string => TournamentAccount) private tournamentStore;
     string[] private idStore;
     mapping(string => Squad) private squadStore;
     uint256 private userCount = 0;
+
+    function createTournament(TournamentAccount memory tournament) public returns (bool) {
+        return tournamentStore.createTournament(tournament);
+    }
+
+    function startTournament(string memory id) public {
+        tournamentStore.startTournament(id);
+    }
+
+    function archiveTournament(string memory id) public {
+        tournamentStore.archiveTournament(id);
+    }
+
+    function updateTournamentDetails(string memory id, string memory newRules) public {
+        tournamentStore.updateTournamentDetails(id, newRules);
+    }
+
+    function updateTournamentPoolPrice(string memory id, uint128 newPrize) public {
+        tournamentStore.updateTournamentPoolPrice(id, newPrize);
+    }
+
+    function updateTournamentTypeToBlitzkrieg(string memory id) public {
+        tournamentStore.updateTournamentTypeToBlitzkrieg(id);
+    }
+
+    function postponeTournament(string memory id, string memory newStartDate) public {
+        tournamentStore.postponeTournament(id, newStartDate);
+    }
+
 
     // Get current user's profile
     function getSelf(string memory principalId) public view returns (UserProfile memory) {
