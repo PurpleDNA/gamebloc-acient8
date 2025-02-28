@@ -1,10 +1,24 @@
 const hre = require("hardhat");
 
 async function main() {
-  const initialSupply = hre.ethers.parseUnits("1000000", 18);
-  const Ancient8Token = await hre.ethers.deployContract("Ancient8Token", [initialSupply]);
+  // Get signers properly in Ethers v6
+  const signers = await hre.ethers.getSigners();
 
-  console.log(`Ancient8Token deployed to: ${await Ancient8Token.getAddress()}`);
+  if (signers.length === 0) {
+    throw new Error("No signers available. Make sure Hardhat network is running.");
+  }
+
+  const deployer = signers[0];
+
+  console.log("Deploying contracts with the account:", await deployer.getAddress());
+
+  const initialSupply = hre.ethers.parseUnits("1000000", 18);
+  const TournamentSystem = await hre.ethers.getContractFactory("TournamentSystem", deployer);
+  const tournamentSystem = await TournamentSystem.deploy(initialSupply);
+
+  await tournamentSystem.waitForDeployment();
+
+  console.log("TournamentSystem deployed to:", await tournamentSystem.getAddress());
 }
 
 main().catch((error) => {

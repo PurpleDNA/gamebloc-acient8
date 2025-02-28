@@ -20,6 +20,16 @@ contract TournamentSystem {
     mapping(string => Squad) private squadStore;
     uint256 private userCount = 0;
 
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function getOwner() public view returns (address) {
+    return owner;
+}
+
     function createTournament(TournamentAccount memory tournament) public returns (bool) {
         return tournamentStore.createTournament(tournament);
     }
