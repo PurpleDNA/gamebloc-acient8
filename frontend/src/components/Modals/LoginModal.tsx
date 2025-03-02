@@ -8,8 +8,10 @@ import { X } from "lucide-react";
 import { useContext } from "react";
 import { Context } from "../../Context/context";
 import { ConnectKitButton } from "connectkit";
+import { useAccount } from "wagmi";
 function LoginModal() {
   const useModal = useContext(Context);
+  const { isConnected } = useAccount();
   const { visible, setVisible } = useModal;
   return (
     <div
@@ -31,14 +33,25 @@ function LoginModal() {
           <div className="flex flex-col gap-5">
             <ConnectKitButton.Custom>
               {({ show }) => {
-                return (
-                  <div onClick={show}>
-                    <LoginModalOptions
-                      icon={ethereum}
-                      text="Connect with Ethereum Wallet"
-                    />
-                  </div>
-                );
+                if (isConnected) {
+                  return (
+                    <div onClick={show}>
+                      <LoginModalOptions
+                        icon={ethereum}
+                        text="Disconnect Ethereum Wallet"
+                      />
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div onClick={show}>
+                      <LoginModalOptions
+                        icon={ethereum}
+                        text="Connect with Ethereum Wallet"
+                      />
+                    </div>
+                  );
+                }
               }}
             </ConnectKitButton.Custom>
             {/* {options.map((option, index) => (
