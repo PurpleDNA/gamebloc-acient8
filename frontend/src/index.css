@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Valorant";
+  src: url(./assets/fonts/Valorant\ Font.ttf);
+}
+@font-face {
+  font-family: "OPsans";
+  src: url(./assets/fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Moon";
+  src: url(./assets/fonts/MoonDance-Regular.ttf);
+}
+@layer base {
+  body {
+    @apply bg-[#151718] overflow-x-hidden;
+  }
+  .containerr {
+    @apply w-[90%] my-0 mx-auto;
+  }
+  .section {
+    @apply mt-16;
+  }
+}
