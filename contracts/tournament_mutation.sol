@@ -2,7 +2,6 @@
 pragma solidity ^0.8.28;
 
 import "./model.sol";
-import "./lib.sol";
 
 library TournamentMutation {
     event TournamentCreated(string id_hash);
