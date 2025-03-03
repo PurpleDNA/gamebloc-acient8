@@ -1,5 +1,6 @@
 // import React from "react";
 import Roadmapping from "../../assets/Roadmapping.png";
+import Gang from "../../assets/Gang.png";
 function Roadmap() {
   return (
     <div className="containerr section flex flex-col gap-8">
@@ -13,7 +14,8 @@ function Roadmap() {
           be part of the evolution of Web3 gaming!
         </p>
       </div>
-      <img src={Roadmapping} alt="" className="mx-auto" />
+      <img src={Roadmapping} alt="" className="mx-auto hidden md:block" />
+      <img src={Gang} alt="" className="mx-auto md:hidden" />
     </div>
   );
 }
