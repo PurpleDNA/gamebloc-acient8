@@ -16,29 +16,26 @@ const Tutorials = () => {
   }, [swiperRef]);
 
   return (
-    <div className="w-full flex flex-col gap-5 my-7 bg-[#040D17] rounded-[1.5rem] py-4 px-3">
-      <h2 className="font-valorant text-center mb-4 text-sm sm:text-lg md:text-xl text-white">
-        TUTORIALS
-      </h2>
-      <div className="flex justify-end items-center">
+    <div className="w-full flex flex-col gap-5 my-7 bg-[#151718] rounded-[1.5rem] py-4 px-3">
+      <div className="flex justify-between items-center">
+        <h2 className="font-valorant text-center mb-4 text-sm sm:text-lg md:text-xl text-white">
+          TUTORIALS
+        </h2>
         <div className="flex gap-3">
           <div
             onClick={handlePrevious}
-            className="rounded-md border p-2 border-[#F6B8FC] hidden lg:block cursor-pointer"
+            className="rounded-md border hover:bg-[#F6B8FC] p-2 border-[#F6B8FC] hidden lg:block cursor-pointer"
           >
             <ChevronLeft
-              className="hover:text-black transition-colors"
-              color="#F6B8FC"
+              className="icon iconleft transition-colors"
+              // color="#F6B8FC"
             />
           </div>
           <div
             onClick={handleNext}
-            className="rounded-md border p-2 border-[#F6B8FC] hidden lg:block cursor-pointer"
+            className="rounded-md border p-2 border-[#F6B8FC] hidden lg:block cursor-pointer hover:bg-[#F6B8FC] transition-colors"
           >
-            <ChevronRight
-              className="hover:text-black transition-colors"
-              color="#F6B8FC"
-            />
+            <ChevronRight className="iconright icon transition-colors" />
           </div>
         </div>
       </div>
@@ -47,7 +44,7 @@ const Tutorials = () => {
           onSwiper={setSwiperRef}
           slidesPerView={1}
           modules={[Autoplay]}
-          loop={true}
+          loop={false}
           breakpoints={{
             640: {
               slidesPerView: 2,

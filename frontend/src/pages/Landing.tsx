@@ -10,7 +10,6 @@ import Contact from "../components/Landing/Contact";
 import Footer from "../components/Landing/Footer";
 import blur from "../assets/blur.png";
 import touch1 from "../assets/touch1.png";
-import LoginModal from "../components/Modals/LoginModal";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +38,6 @@ function Landing() {
       <Roadmap />
       <Contact />
       <Footer />
-      <LoginModal />
     </div>
   );
 }
