@@ -16,7 +16,7 @@ const Tutorials = () => {
   }, [swiperRef]);
 
   return (
-    <div className="w-full flex flex-col gap-8 my-7 bg-[#040D17] rounded-[1.5rem] py-4 px-3">
+    <div className="w-full flex flex-col gap-5 my-7 bg-[#040D17] rounded-[1.5rem] py-4 px-3">
       <h2 className="font-valorant text-center mb-4 text-sm sm:text-lg md:text-xl text-white">
         TUTORIALS
       </h2>
