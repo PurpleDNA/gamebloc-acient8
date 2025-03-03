@@ -12,6 +12,7 @@ const ProtectedRoutes: FC<Props> = ({ children }) => {
   useEffect(() => {
     if (!isConnected) {
       navigate("/", { replace: true });
+      console.log("You are not connected");
     }
   }, [navigate, isConnected]);
 

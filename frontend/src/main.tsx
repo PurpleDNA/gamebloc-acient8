@@ -7,6 +7,7 @@ import { Web3Provider } from "./components/Auth/Web3Provider.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoutes from "./components/Auth/ProtectedRoutes.tsx";
 import Landing from "./pages/Landing.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <div>Dashboard</div>,
+        element: <Dashboard />,
       },
     ],
   },
