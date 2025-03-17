@@ -22,7 +22,7 @@ function Landing() {
     }
   }, [navigate, isConnected]);
   return (
-    <div className="App">
+    <div className="App overflow-x-hidden">
       <img src={blur} alt="" className="absolute -top-10 -right-20 -z-10" />
       <img
         src={touch1}
