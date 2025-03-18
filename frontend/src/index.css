@@ -4,17 +4,21 @@
 
 @font-face {
   font-family: "Valorant";
-  src: url(./assets/fonts/Valorant\ Font.ttf) format("ttf");
+  src: url("./assets/fonts/Valorant\ Font.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "OPsans";
-  src: url(./assets/fonts/OpenSans-Regular.ttf);
+  src: url("./assets/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "Moon";
-  src: url(./assets/fonts/MoonDance-Regular.ttf);
+  src: url("./assets/fonts/MoonDance-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @layer base {
   body {
