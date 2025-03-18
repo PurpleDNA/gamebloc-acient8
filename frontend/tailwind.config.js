@@ -7,8 +7,8 @@ export default {
     extend: {
       fontFamily: {
         valorant: ["Valorant", "sans-serif"],
-        opsans: ['"OPsans"', "sans-serif"],
-        moon: ['"Moon"', "sans-serif"],
+        opsans: ["OPsans", "sans-serif"],
+        moon: ["Moon", "sans-serif"],
       },
       colors: {
         button: "#F9CDFD",
