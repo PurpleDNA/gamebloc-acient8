@@ -6,9 +6,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        valorant: ["Valorant", "sans-serif"],
-        opsans: ["OPsans", "sans-serif"],
-        moon: ["Moon", "sans-serif"],
+        'valorant': ['Valorant', 'sans-serif'],
+        'opsans': ['OPsans', 'sans-serif'],
+        'moon': ['Moon', 'sans-serif'],
       },
       colors: {
         button: "#F9CDFD",
